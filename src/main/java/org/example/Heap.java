@@ -1,8 +1,8 @@
 package org.example;
 
 public class Heap {
-    int[] arr;
-    int sizeOfArray;
+    private int[] arr;
+    private int sizeOfArray;
     public Heap(){
         sizeOfArray = 10;
         arr = new int[sizeOfArray];
@@ -27,7 +27,9 @@ public class Heap {
         index1 = temp;
     }
     void heapifyUp(int index){
+        if(index == 0){
 
+        }
     }
     void heapifyDown(int index){
 
