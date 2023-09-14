@@ -27,8 +27,11 @@ public class Heap {
         arr[index1] = temp;
     }
     void heapifyUp(int index){
+        if(index<= 0){
+            return;
+        }
         int parentIndex = this.getParentIndex(index);
-        while(arr[parentIndex] > arr[index]){ //keep going up the tree while out of order
+        while(arr[parentIndex] > arr[index] && index > 0){ //keep going up the tree while out of order
             swap(parentIndex, index);
 
             index = parentIndex;
@@ -39,9 +42,15 @@ public class Heap {
 
     }
     void add(int item){
-
+        //copy into array
+        arr[sizeOfArray] = item;
+        sizeOfArray++;
+        heapifyUp(sizeOfArray-1);
     }
     void show(){
+        if(sizeOfArray==0){
+            System.out.println("No elements in array");
+        }
         for(int i = 0; i < sizeOfArray; i++){
             System.out.print(arr[i] + " ");
         }
